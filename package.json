@@ -1,0 +1,12 @@
+{
+  "name": "mirage",
+  "version": "0.1.0",
+  "description": "",
+  "main": "server.js",
+  "author": "Sylvain Reucherand <hello@sylvainreucherand.fr>",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.13.0",
+    "jade": "^1.11.0"
+  }
+}
