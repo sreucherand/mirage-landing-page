@@ -1,6 +1,5 @@
 var bodyParser = require('body-parser');
 var express = require('express');
-var geoip = require('geoip-lite');
 var path = require('path');
 var nodemailer = require('nodemailer');
 var smtp = require('nodemailer-smtp-transport');
@@ -42,7 +41,7 @@ app.get('/', function (req, res) {
 
 	language = acceptLanguage.get(req.headers['accept-language']);
 	language = acceptLanguage.parse(language);
-	
+
 	if (languages.indexOf(language[0].language) > -1) {
 		app.set('lang', language[0].language);
 	}
