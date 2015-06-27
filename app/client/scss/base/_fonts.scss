@@ -1,0 +1,29 @@
+@font-face {
+  font-family: 'Intro';
+  src: url('/public/assets/font/intro/intro-black.eot?#iefix') format('embedded-opentype'),
+       url('/public/assets/font/intro/intro-black.woff') format('woff'),
+       url('/public/assets/font/intro/intro-black.ttf') format('truetype'),
+       url('/public/assets/font/intro/intro-black.svg#intro-black') format('svg');
+  font-style: normal;
+  font-weight: 900;
+}
+
+@font-face {
+  font-family: 'Maison Neue Mono';
+  src: url('/public/assets/font/maison-neue/maison-neue-mono.eot?#iefix') format('embedded-opentype'),
+       url('/public/assets/font/maison-neue/maison-neue-mono.woff') format('woff'),
+       url('/public/assets/font/maison-neue/maison-neue-mono.ttf') format('truetype'),
+       url('/public/assets/font/maison-neue/maison-neue-mono.svg#maison-neue-mono') format('svg');
+  font-style: normal;
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: 'Maison Neue Mono';
+  src: url('/public/assets/font/maison-neue/maison-neue-mono-italic.eot?#iefix') format('embedded-opentype'),
+       url('/public/assets/font/maison-neue/maison-neue-mono-italic.woff') format('woff'),
+       url('/public/assets/font/maison-neue/maison-neue-mono-italic.ttf') format('truetype'),
+       url('/public/assets/font/maison-neue/maison-neue-mono-italic.svg#maison-neue-mono-italic') format('svg');
+  font-style: italic;
+  font-weight: normal;
+}

@@ -1,0 +1,29 @@
+body {
+	font-family: 'Maison Neue Mono', sans-serif;
+	font-size: 12px;
+	line-height: 18px;
+}
+
+a {
+	color: inherit;
+}
+
+input,
+button,
+textarea {
+	appearance: none;
+	background: none;
+	border: none;
+
+	&:focus {
+		outline: 0px transparent;
+	}
+}
+
+svg {
+	display: inline-block;
+}
+
+* {
+	box-sizing: border-box;
+}
