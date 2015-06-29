@@ -52,7 +52,7 @@ var App = (function () {
                 if (this.$video[0].readyState > 3) {
                   resolve();
                 } else {
-                    this.$video[0].addEventListener('canplaythrough', function () {
+                    this.$video[0].addEventListener('loadstart', function () {
                         resolve();
                     });
                 }
