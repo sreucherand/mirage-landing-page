@@ -39,12 +39,14 @@ var render = function (req, res) {
 app.get('/', function (req, res) {
 	var language = null;
 
-	language = acceptLanguage.get(req.headers['accept-language']);
-	language = acceptLanguage.parse(language);
+    if (req.headers['accept-language']) {
+        language = acceptLanguage.get(req.headers['accept-language']);
+        language = acceptLanguage.parse(language);
 
-	if (languages.indexOf(language[0].language) > -1) {
-		app.set('lang', language[0].language);
-	}
+        if (languages.indexOf(language[0].language) > -1) {
+            app.set('lang', language[0].language);
+        }
+    }
 
 	render(req, res);
 });
