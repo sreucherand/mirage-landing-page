@@ -95,9 +95,13 @@
 	
 			if (window.innerWidth >= 1024) {
 				promises.push(new Promise(function (resolve, reject) {
-					this.$video[0].addEventListener('canplaythrough', function () {
-						resolve();
-					});
+	                if (this.$video[0].readyState > 3) {
+	                  resolve();
+	                } else {
+	                    this.$video[0].addEventListener('canplaythrough', function () {
+	                        resolve();
+	                    });
+	                }
 				}.bind(this)));
 				this.$video[0].load();
 			}
