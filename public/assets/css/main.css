@@ -412,7 +412,7 @@ th {
 
 .wrapper__panel {
   height: 100%;
-  min-height: 512px;
+  min-height: 640px;
   overflow: hidden;
   position: absolute;
   width: 50%; }
@@ -444,7 +444,7 @@ th {
         bottom: 0;
         content: '';
         display: block;
-        height: 2px;
+        height: 1px;
         position: absolute;
         width: 50%;
         -webkit-transition: all 500ms cubic-bezier(0.19, 1, 0.22, 1);

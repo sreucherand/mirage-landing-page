@@ -20,10 +20,10 @@ var App = (function () {
 		this.$progress = this.$loader.find('.load__progress');
 		this.$video = this.$leftPanel.find('video');
 
-		this.help = this.help.bind(this);
+		this.toggleHelp = this.toggleHelp.bind(this);
 		this.trailer = this.trailer.bind(this);
 
-		this.$help.on('click', this.help);
+		this.$help.on('click', this.toggleHelp);
 		this.$trailer.on('click', this.trailer);
 
 		new Form(this.$element.find('.panel__newsletter form'));
@@ -75,10 +75,16 @@ var App = (function () {
 		}.bind(this));
 	};
 
-	App.prototype.help = function (evt) {
+	App.prototype.toggleHelp = function (evt) {
 		evt.preventDefault();
 
-		TweenLite.to(this.$info, 0.5, {className: '+=newsletter__info--opened', ease: Expo.easeOut});
+        var classBase = 'newsletter__info--opened';
+        var index = Number(this.$info.hasClass(classBase));
+        var prefix = ['+=', '-='];
+
+        var className = prefix[index].concat(classBase);
+
+		TweenLite.to(this.$info, 0.5, {className: className, ease: Expo.easeOut});
 	};
 
 	App.prototype.trailer = function (evt) {
