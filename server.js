@@ -4,7 +4,6 @@ var path = require('path');
 var nodemailer = require('nodemailer');
 var smtp = require('nodemailer-smtp-transport');
 var acceptLanguage = require('accept-language');
-var webpack = require('webpack');
 
 var credentials = require('./credentials');
 
@@ -22,7 +21,7 @@ app.use('/static', express.static(path.resolve('static')));
 
 if (app.get('env') === 'development') {
     var config = require('./webpack.config')('development');
-    var compiler = webpack(config);
+    var compiler = require('webpack')(config);
 
     app.use(require('webpack-dev-middleware')(compiler, {lazy: false, publicPath: config.output.publicPath}));
     app.use(require('webpack-hot-middleware')(compiler));
