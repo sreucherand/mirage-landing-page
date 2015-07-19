@@ -4,14 +4,38 @@ var path = require('path');
 var nodemailer = require('nodemailer');
 var smtp = require('nodemailer-smtp-transport');
 var acceptLanguage = require('accept-language');
+var webpack = require('webpack');
 
 var credentials = require('./credentials');
 
+var app = express();
+
+app.set('view engine', 'jade');
+app.set('views', path.resolve('src/views'));
+app.set('lang', 'en');
+app.set('env', process.env.NODE_ENV || 'development');
+app.set('port', process.env.PORT || 8015);
+
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended: true}));
+app.use('/static', express.static(path.resolve('static')));
+
+if (app.get('env') === 'development') {
+    var config = require('./webpack.config')('development');
+    var compiler = webpack(config);
+
+    app.use(require('webpack-dev-middleware')(compiler, {lazy: false, publicPath: config.output.publicPath}));
+    app.use(require('webpack-hot-middleware')(compiler));
+}
+
+app.locals.pretty = true;
+
+var languages = ['fr', 'en'];
 var transporter = nodemailer.createTransport(smtp({
-	host: 'mail.gandi.net',
-	port: 465,
-	secure: true,
-	auth: credentials.gandi
+    host: 'mail.gandi.net',
+    port: 465,
+    secure: true,
+    auth: credentials.gandi
 }));
 var mail = {
     from: 'Mirage <hello@thinkmirage.io>',
@@ -19,21 +43,8 @@ var mail = {
     subject: 'New subscription to the newsletter !',
     text: 'You have a new subscription to newsletter service on thinkmirage.io : {address}'
 };
-
-var app = express();
-
-app.set('view engine', 'jade');
-app.set('views', path.resolve('app/views'));
-app.set('lang', 'en');
-app.set('port', process.env.PORT || 8015);
-
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({extended: true})); 
-app.use('/public', express.static('public'));
-
-var languages = ['fr', 'en'];
 var render = function (req, res) {
-	res.render('index', require(path.resolve(path.join('app/client/data/', app.get('lang') + '.json'))));
+	res.render('index', require(path.resolve(path.join('src/data/', app.get('lang') + '.json'))));
 };
 
 app.get('/', function (req, res) {

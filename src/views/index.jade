@@ -1,0 +1,32 @@
+doctype html
+html
+  head
+    meta(charset='utf-8')
+    title Mirage
+    meta(name='description' content='')
+    meta(name='keywords' content='')
+    meta(name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no')
+    link(rel='stylesheet' href='/static/app.bundle.css')
+  body
+    .wrapper
+        .wrapper__panel.wrapper__panel--left
+            include ../components/left-panel/left-panel.jade
+
+        .wrapper__panel.wrapper__panel--right
+            include ../components/right-panel/right-panel.jade
+            
+        .wrapper__load-layer
+            include ../components/loader/loader.jade
+
+        .wrapper__video-layer
+            include ../components/video/video.jade
+
+    script(src='/static/app.bundle.js')
+    
+    script.
+        (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+        function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+        e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+        e.src='//www.google-analytics.com/analytics.js';
+        r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+        ga('create','UA-37300118-2');ga('send','pageview');

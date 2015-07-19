@@ -1,0 +1,18 @@
+div.panel__contact
+    a.link.link--effect(href='mailto:hello@thinkmirage.io')= contact
+div.panel__info
+    .info__inner
+        img(src='/static/img/logo-mirage.gif')
+        button.btn.btn--bordered.btn--trailer
+            svg
+                rect.rect--1(x='0' y='0' width='200' height='74')
+                rect.rect--2(x='0' y='0' width='200' height='74')
+                rect.rect--3(x='0' y='0' width='200' height='74')
+            | !{trailer}
+div.panel__newsletter
+    p !{newsletter_title} 
+        a.link.link--help(href='#') (?)
+    include ../form/form.jade
+    p.newsletter__info
+        span.text-format.text-format--bold.text-format--color (?)
+        |  !{newsletter_info}

@@ -1,0 +1,17 @@
+.wrapper__panel--left {
+	opacity: 0;
+	transform: translateX(-25%);
+
+	video {
+		height: 100%;
+		position: absolute;
+		right: 0;
+		top: 0;
+	}
+}
+
+@media all and (max-width: 1024px) {
+	.wrapper__panel--left {
+		display: none;
+	}
+}
