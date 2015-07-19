@@ -10,19 +10,13 @@ var webpack = require('webpack');
 
 var output = path.join(__dirname, 'dist');
 
-gulp.task('deploy', function () {
-
-    var branch = 'deploy-' + new Date().getTime();
-
-    shell.task([
-    'git branch -D ' + branch,
+gulp.task('deploy', shell.task([
     'git stash',
-    'git checkout -b ' + branch,
+    'git checkout -b deploy',
     'rm .gitignore',
     'git add .gitignore --all',
     'gulp build'
-    ]);
-});
+]));
 
 gulp.task('build:webpack', function (callback) {
     webpack(require('./webpack.config')('production'), function (err, stats) {
