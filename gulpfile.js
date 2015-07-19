@@ -11,13 +11,8 @@ gulp.task('deploy', shell.task([
     'git checkout -b ' + branch,
     'npm run build',
     'git add static/',
-<<<<<<< Updated upstream
     'git commit -am "' + branch + '"',
-    'git push heroku ' + branch + ':master --force',$
-=======
-    'git commit -am "' + new Date().getTime() + '"',
-    'git push heroku ' + new Date().getTime() + ':master --force',
->>>>>>> Stashed changes
+    'git push heroku ' + branch + ':master --force',
     'git checkout master',
     'git branch -D ' + branch,
     'git stash pop'
