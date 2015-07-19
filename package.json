@@ -6,7 +6,8 @@
   "author": "Sylvain Reucherand <hello@sylvainreucherand.fr>",
   "license": "MIT",
   "scripts": {
-    "start": "UV_THREADPOOL_SIZE=5 node server.js"
+    "start": "UV_THREADPOOL_SIZE=5 node server.js",
+    "build": "UV_THREADPOOL_SIZE=5 npm run build"
   },
   "dependencies": {
     "accept-language": "^2.0.16",
