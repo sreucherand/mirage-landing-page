@@ -12,7 +12,7 @@ gulp.task('deploy', shell.task([
     'npm run build',
     'git add static/',
     'git commit -am "' + branch + '"',
-    'git push heroku ' + branch + ':master --force',
+    'git push heroku ' + branch + ':master --force',$
     'git checkout master',
     'git branch -D ' + branch,
     'git stash pop'
