@@ -1,12 +1,9 @@
 var gulp = require('gulp');
 var gutil = require('gulp-util');
 var shell = require('gulp-shell');
-// var del = require('del');
 var jade = require('jade');
 var path = require('path');
 var webpack = require('webpack');
-// var through = require('through2');
-// var sequence = require('run-sequence');
 
 var output = path.join(__dirname, 'dist');
 

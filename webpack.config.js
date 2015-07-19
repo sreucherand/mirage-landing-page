@@ -22,7 +22,7 @@ var base = {
             },
             {
                 test: /\.(eot|svg|ttf|woff)$/,
-                loader: 'file'
+                loader: 'file?name=fonts/[hash].[ext]'
             }
         ]
     },
@@ -55,7 +55,7 @@ var development = {
         loaders: [
             {
                 test: /\.scss$/,
-                loader: 'style!css!autoprefixer!sass?includePaths[]=' + (path.join(__dirname, 'src/scss'))
+                loader: 'style!css!autoprefixer!sass'
             }
         ]
     },
@@ -71,7 +71,7 @@ var production = {
         loaders: [
             {
                 test: /\.scss$/,
-                loader: ExtractTextPlugin.extract('style', 'css?minimize!autoprefixer!sass?includePaths[]=' + (path.join(__dirname, 'src/scss')))
+                loader: ExtractTextPlugin.extract('style', 'css?minimize!autoprefixer!sass')
             }
         ]
     },
