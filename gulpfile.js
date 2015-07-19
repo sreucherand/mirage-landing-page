@@ -1,18 +1,21 @@
 var gulp = require('gulp');
 var gutil = require('gulp-util');
 var shell = require('gulp-shell');
-var jade = require('jade');
 var path = require('path');
 var webpack = require('webpack');
 
-var output = path.join(__dirname, 'dist');
+var branch = 'deploy-' + new Date().getTime();
 
 gulp.task('deploy', shell.task([
     'git stash',
-    'git checkout -b deploy',
-    'rm .gitignore',
-    'git add .gitignore --all',
-    'gulp build'
+    'git checkout -b ' + branch,
+    'npm run build',
+    'git add /static',
+    'git commit -am "' + new Date().getTime() + '"',
+    'git push heroku ' + new Date().getTime() + ':master --force',
+    'git checkout master',
+    'git branch -D ' + branch,
+    'git stash pop'
 ]));
 
 gulp.task('build:webpack', function (callback) {
