@@ -1,4 +1,5 @@
 .DS_Store
 *.map
+credentials.*
 node_modules
 
