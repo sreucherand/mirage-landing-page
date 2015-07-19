@@ -6,7 +6,7 @@
   "author": "Sylvain Reucherand <hello@sylvainreucherand.fr>",
   "license": "MIT",
   "scripts": {
-    "start": "UV_THREADPOOL_SIZE=5 node server.js",
+    "start": "node server.js",
     "build": "gulp build"
   },
   "dependencies": {
