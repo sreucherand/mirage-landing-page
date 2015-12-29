@@ -1,7 +1,12 @@
+html,
+body {
+	height: 100%;
+}
+
 body {
 	font-family: 'Maison Neue Mono', sans-serif;
 	font-size: 12px;
-	line-height: 18px;
+	line-height: 1.8em;
 
     -webkit-font-smoothing: antialiased;
 }
@@ -26,6 +31,31 @@ textarea {
 	}
 }
 
-svg {
-	display: inline-block;
+h1,
+h2,
+h3,
+h4 {
+	font-family: 'Maison Neue', sans-serif;
+	font-weight: 900;
+}
+
+h1,
+h2 {
+	line-height: 1.2em;
+}
+
+h3,
+h4 {
+	letter-spacing: 0.1em;
+	text-transform: uppercase;
+}
+
+ul,
+li {
+	list-style: none;
+	padding: 0;
+}
+
+img {
+	display: block;
 }

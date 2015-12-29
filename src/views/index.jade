@@ -1,25 +1,107 @@
 doctype html
 html
-  head
-    meta(charset='utf-8')
-    title Mirage
-    meta(name='description' content='')
-    meta(name='keywords' content='')
-    meta(name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no')
-    link(rel='stylesheet' href='/static/app.bundle.css')
-  body
-    .wrapper
-        .wrapper__panel.wrapper__panel--left
-            include ../components/left-panel/left-panel.jade
+    head
+        meta(charset='utf-8')
+        title Mirage
 
-        .wrapper__panel.wrapper__panel--right
-            include ../components/right-panel/right-panel.jade
-            
-        .wrapper__load-layer
-            include ../components/loader/loader.jade
+        meta(name='description' content='')
+        meta(name='keywords' content='')
+        meta(name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no')
 
-        .wrapper__video-layer
-            include ../components/video/video.jade
+        link(rel='stylesheet' href='/static/app.bundle.css')
+
+    body
+        //video(muted='true' autoplay='true' loop='true' src='/static/media/video/background_loop-video.mp4')
+        .panel
+            .container-fluid
+                .section.section--intro
+                    .intro__menu
+                        .row.between-xs
+                            .col-xs-2
+                                .intro__logo
+                                    h1 Mirage
+                                        svg(viewBox='0 0 512 64.6')
+                                            path(d='M113.1,39.7V1.1h7.2v38.6H113.1z M175.2,39.7V1.1h27.3c7.8,0,14.1,2.4,18.1,6.3c3.1,3.1,4.9,7.5,4.9,12.5v0.2c0,10.5-7.3,16.7-17.2,18.5c0,0-4.1,1-9.5,1H175.2z M182.4,33.5h19.5c9.5,0,16.3-4.9,16.3-13.1v-0.2c0-7.8-6-12.5-16.2-12.5h-19.6V33.5z M276,39.4l14-31.1l13.8,31.1h7.5L293.4,1h-6.7l-17.9,38.4H276z M209.9,52.2l9.1,12.4h8.8l-9.1-12.4H209.9z M388.7,39.7h26.2v-6h-26.2V39.7z M365.3,39.7c-0.5-2.2-0.7-4.4-0.7-6.8v-0.2c0-14.2,10.1-26,24.1-26c9,0,14.4,3,19.3,7.3l4.6-5.4C406.3,3.1,399.7,0,389,0c-19.1,0-31.8,15.4-31.8,32.8V33c0,2.3,0.2,4.5,0.6,6.6H365.3z M493.8,39.7v-6.1h-20.5V7.6H512V1.1h-45.9v38.6H493.8z M50.2,1L29.1,24.7L8,1H0l26.1,30.5h6.1l17.9-19.6v27.5h6.9V1H50.2z')
+
+                            .col-xs-2
+                                .intro__social
+                                    span= social
+                                        br
+                                        a(href='https://twitter.com/ThinkMirage' target='_blank') Twitter
+                                        |  — 
+                                        a(href='https://www.facebook.com/thinkmirage/' target='_blank') Facebook
+
+                    .row.center-xs
+                        .col-xs-6
+                            h2= intro.title
+                        .col-xs-4
+                            p= intro.text
+
+                .section.section--experiment
+                    .row.center-xs
+                        .col-xs-6
+                            h2= experiment.title
+                        .col-xs-3
+                            p= experiment.text
+
+                .section.section--acknowledgements
+                    .row.center-xs
+                        .col-xs-6
+                            h2= acknowledgments.title
+
+                    .row
+                        each column in acknowledgments.content[0]
+                            .col-xs-3
+                                each section in column
+                                    .acknowledgements__category
+                                        h3.category__title !{section.title}
+                                        each category in section.content
+                                            .category__item
+                                                h4.item__title
+                                                    ul
+                                                        each line in category.title
+                                                            li= line
+                                                ul.item__content
+                                                    each line in category.content
+                                                        li= line
+
+                    .row
+                        .col-xs-6
+                            .acknowledgements__category.acknowledgements__category--partners
+                                h3.category__title= acknowledgments.content[1].title
+                                img(src='/static/media/img/partners.png')
+
+                                .row
+                                    each category in acknowledgments.content[1].content
+                                        .col-xs-2
+                                            .category__item
+                                                h4.item__title
+                                                    ul
+                                                        each line in category.title
+                                                            li= line
+                                                if category.content
+                                                    ul.item__content
+                                                            each line in category.content
+                                                                li= line
+
+                    .row
+                        .col-xs-6
+                            .acknowledgements__category.acknowledgements__category--block
+                                h3.category__title= acknowledgments.content[2].title
+                                p= acknowledgments.content[2].content.join(' • ')
+                                img(src='/static/media/img/credits.png')
+
+            //- .wrapper__panel.wrapper__panel--left
+            //-     include ../components/left-panel/left-panel.jade
+
+            //- .wrapper__panel.wrapper__panel--right
+            //-     include ../components/right-panel/right-panel.jade
+                
+            //- .wrapper__load-layer
+            //-     include ../components/loader/loader.jade
+
+            //- .wrapper__video-layer
+            //-     include ../components/video/video.jade
 
     script(src='/static/app.bundle.js')
     
@@ -29,4 +111,4 @@ html
         e=o.createElement(i);r=o.getElementsByTagName(i)[0];
         e.src='//www.google-analytics.com/analytics.js';
         r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
-        ga('create','UA-37300118-2');ga('send','pageview');
+        //ga('create','UA-37300118-2');ga('send','pageview');

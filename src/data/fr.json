@@ -1,7 +1,336 @@
 {
-	"contact": "Contactez-nous",
-	"trailer": "Regarder<br>le trailer",
-	"newsletter_title": "Soyez prévenu<br>de l'ouverture du site",
-	"newsletter_info": "Votre adresse e-mail nous permet de vous tenir informé des actualités de Mirage (ouverture du site, diffusion en salle, etc.). Pas de spam. Votre adresse ne sera pas transmise à des tiers.",
-	"thanks": "Merci !"
+    "contact": "Contactez-nous",
+    "social": "Suivez-nous sur",
+    "intro": {
+        "title": "Intro",
+        "text": "Mirage est un court-métrage interactif réalisé par quatre étudiants de l’école Gobelins — Paris dans le cadre de leur diplôme de fin d’études."
+    },
+    "experiment": {
+        "title": "Expérience",
+        "text": "Bientôt disponible.",
+        "newsletter": {
+            "title": "Soyez prévenu du lancement",
+            "info": "Votre adresse e-mail nous permet de vous tenir informé des actualités de Mirage (ouverture du site, diffusion en salle, etc.). Pas de spam. Votre adresse ne sera pas transmise à des tiers.",
+            "message": "Merci !"
+        }
+    },
+    "acknowledgments": {
+        "title": "Remerciements",
+        "content": [
+            [
+                [
+                    {
+                        "title": "Réalisation<br>Production<br>Gobelins, l'école de l'image",
+                        "content": [
+                            {
+                                "title": [
+                                    "Concept",
+                                    "Scénario"
+                                ],
+                                "content": [
+                                    "Laure Marchadier",
+                                    "Julie Muckensturm",
+                                    "Antonin Langlade",
+                                    "Sylvain Reucherand"
+                                ]
+                            },
+                            {
+                                "title": [
+                                    "UI Design",
+                                    "Interactive design",
+                                    "Motion design",
+                                    "Post-production vidéo"
+                                ],
+                                "content": [
+                                    "Julie Muckensturm"
+                                ]
+                            },
+                            {
+                                "title": [
+                                    "Réalisation vidéo"
+                                ],
+                                "content": [
+                                    "Julie Muckensturm",
+                                    "Sylvain Reucherand"
+                                ]
+                            },
+                            {
+                                "title": [
+                                    "Assistant réalisateur",
+                                    "Coordinateur plateau",
+                                    "Référent son",
+                                    "Logistique"
+                                ],
+                                "content": [
+                                    "Antonin Langlade"
+                                ]
+                            },
+                            {
+                                "title": [
+                                    "Design installation"
+                                ],
+                                "content": [
+                                    "Sylvain Reucherand"
+                                ]
+                            },
+                            {
+                                "title": [
+                                    "Direction artistique"
+                                ],
+                                "content": [
+                                    "Laure Marchadier",
+                                    "Julie Muckensturm"
+                                ]
+                            },
+                            {
+                                "title": [
+                                    "Développement"
+                                ],
+                                "content": [
+                                    "Antonin Langlade",
+                                    "Sylvain Reucherand"
+                                ]
+                            },
+                            {
+                                "title": [
+                                    "Stylisme",
+                                    "Coiffure",
+                                    "Cathering"
+                                ],
+                                "content": [
+                                    "Laure Marchadier"
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "title": "Maquillage<br>Make Up For Ever",
+                        "content": [
+                            {
+                                "title": [
+                                    "Maquillage",
+                                    "VFX Makeup"
+                                ],
+                                "content": [
+                                    "Marion Létendard",
+                                    "Adeline Petit"
+                                ]
+                            }
+                        ]
+                    }
+                ],
+                [
+                    {
+                        "title": "Équipe filmique<br>Louis Lumière",
+                        "content": [
+                            {
+                                "title": [
+                                    "Chef opérateur"
+                                ],
+                                "content": [
+                                    "Olivier Patron"
+                                ]
+                            },
+                            {
+                                "title": [
+                                    "Première assitante opérateur"
+                                ],
+                                "content": [
+                                    "Éléna Erhel"
+                                ]
+                            },
+                            {
+                                "title": [
+                                    "Chef électrique"
+                                ],
+                                "content": [
+                                    "Maxime Sabin"
+                                ]
+                            },
+                            {
+                                "title": [
+                                    "Premier assistant caméra"
+                                ],
+                                "content": [
+                                    "Alexandre Buyukodabas"
+                                ]
+                            },
+                            {
+                                "title": [
+                                    "Sound designer"
+                                ],
+                                "content": [
+                                    "Lucien Richardson"
+                                ]
+                            },
+                            {
+                                "title": [
+                                    "Bruiteuse"
+                                ],
+                                "content": [
+                                    "Éléonore Mallo"
+                                ]
+                            },
+                            {
+                                "title": [
+                                    "Photographes plateau"
+                                ],
+                                "content": [
+                                    "Marc Fournier",
+                                    "Kévin Théard"
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "title": "Acting",
+                        "content": [
+                            {
+                                "title": [
+                                    "Adèle"
+                                ],
+                                "content": [
+                                    "Alice May Fournier"
+                                ]
+                            },
+                            {
+                                "title": [
+                                    "Jules"
+                                ],
+                                "content": [
+                                    "Solal Lamé"
+                                ]
+                            },
+                            {
+                                "title": [
+                                    "Criminel"
+                                ],
+                                "content": [
+                                    "Emal Saïfi"
+                                ]
+                            },
+                            {
+                                "title": [
+                                    "Criminel (doubleur)"
+                                ],
+                                "content": [
+                                    "Kévin Théard"
+                                ]
+                            },
+                            {
+                                "title": [
+                                    "Édouard (vue subjective)",
+                                    "Surfeur"
+                                ],
+                                "content": [
+                                    "Antonin Langlade"
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "title": [
+                            "Doublage"
+                        ],
+                        "content": [
+                            {
+                                "title": [
+                                    "Édouard (Voix-off)"
+                                ],
+                                "content": [
+                                    "Adrien Antoine"
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            ],
+            {
+                "title": "Partenaires",
+                "content": [
+                    {
+                        "title": [
+                            "Atelier Seewhy"
+                        ],
+                        "content": [
+                            "Jean-Kanora You",
+                            "Bruno Canet"
+                        ]
+                    },
+                    {
+                        "title": [
+                            "Studio Kremlin"
+                        ],
+                        "content": [
+                            "Constance Cardon"
+                        ]
+                    },
+                    {
+                        "title": [
+                            "Mairie de Plouharnel"
+                        ],
+                        "content": [
+                            "Erwan Delsaut",
+                            "Équipe municipale",
+                            "Service technique"
+                        ]
+                    },
+                    {
+                        "title": [
+                            "Azendoo"
+                        ]
+                    },
+                    {
+                        "title": [
+                            "ATS Surf Shop"
+                        ]
+                    }
+                ]
+            },
+            {
+                "title": "Merci",
+                "content": [
+                    "Véronique Ficara",
+                    "Laure Poulain",
+                    "Catherine Nyeki",
+                    "Béatrice Lartigue",
+                    "Stéphane Pestourie",
+                    "Benoît Widemann",
+                    "Nicolas Barberian",
+                    "Claire Mineur",
+                    "Muriel Mehong",
+                    "Geoffrey Dorne",
+                    "Nicolas Esposito",
+                    "Carole Arrat",
+                    "Mathieu Decarli",
+                    "Frank Barbian",
+                    "Patricia Bednarski",
+                    "Isabelle Dauvergne",
+                    "Thierry Audoux",
+                    "Caroline Liffraud",
+                    "Florian Zumbrunn",
+                    "Jean-Pierre Le Bournot",
+                    "Julien Rault",
+                    "Mathias Roumy",
+                    "Anthony Meric",
+                    "Hélène Studer",
+                    "CRMA promotion 2015 — mention spéciale à Samuel Honigstein",
+                    "Jules Rigolle",
+                    "Didier Chabat",
+                    "Shameer",
+                    "Morgane Aubry",
+                    "Mireille Le Bournot",
+                    "Mr & Mme Reucherand",
+                    "Martial Borde",
+                    "Victor Hav",
+                    "Régie Gobelins — Xavier Pruvot — Sylvain Dodane — Patrice Hazebaert",
+                    "Nadège Labadie",
+                    "Marie-France Zumofen",
+                    "Arnaud Lacaze-Masmonteil",
+                    "Méhdi Ait-Kacimi",
+                    "Nos familles"
+                ]
+            }
+        ]
+    }
 }

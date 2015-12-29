@@ -5,7 +5,7 @@ import on from 'dom-event'
 import select from 'dom-select'
 import value from 'dom-value'
 import request from 'superagent'
-import serialize from 'form-serialize'
+// import serialize from 'form-serialize'
 
 import Component from '../component/component'
 

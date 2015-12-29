@@ -1,5 +1,5 @@
-import 'babel-core/polyfill'
 import 'normalize.scss/normalize.scss'
+import 'flexboxgrid/dist/flexboxgrid.css'
 
 import '../scss/common.scss'
 import '../scss/base/_fonts.scss'
@@ -24,62 +24,62 @@ import LeftPanel from './left-panel/left-panel'
 import RightPanel from './right-panel/right-panel'
 import Video from './video/video'
 
-class App {
+// class App {
 
-    constructor () {
-        TweenLite.defaultEase = Expo.easeOut
+//     constructor () {
+//         TweenLite.defaultEase = Expo.easeOut
 
-        this.container = select('.wrapper')
-        this.components = []
+//         this.container = select('.wrapper')
+//         this.components = []
 
-        this.form = new Form(select('.panel__newsletter form', this.container))
-        this.leftPanel = new LeftPanel(select('.wrapper__panel--left', this.container))
-        this.rightPanel = new RightPanel(select('.wrapper__panel--right', this.container))
-        this.loader = new Loader(select('.wrapper__load-layer', this.container))
-        this.video = new Video(select('.wrapper__video-layer', this.container))
+//         this.form = new Form(select('.panel__newsletter form', this.container))
+//         this.leftPanel = new LeftPanel(select('.wrapper__panel--left', this.container))
+//         this.rightPanel = new RightPanel(select('.wrapper__panel--right', this.container))
+//         this.loader = new Loader(select('.wrapper__load-layer', this.container))
+//         this.video = new Video(select('.wrapper__video-layer', this.container))
 
-        this.components.push(this.form)
-        this.components.push(this.leftPanel)
-        this.components.push(this.rightPanel)
-        this.components.push(this.loader)
-        this.components.push(this.video)
+//         this.components.push(this.form)
+//         this.components.push(this.leftPanel)
+//         this.components.push(this.rightPanel)
+//         this.components.push(this.loader)
+//         this.components.push(this.video)
 
-        on(this.rightPanel.button, 'click', (evt) => this.video.open(evt))
+//         on(this.rightPanel.button, 'click', (evt) => this.video.open(evt))
 
-        this.load().then(() => this.init())
-    }
+//         this.load().then(() => this.init())
+//     }
 
-    load () {
-        let manifest = []
-        let promises = []
+//     load () {
+//         let manifest = []
+//         let promises = []
 
-        this.components.forEach(component => {
-            manifest = manifest.concat(component.getManifest())
-        })
+//         this.components.forEach(component => {
+//             manifest = manifest.concat(component.getManifest())
+//         })
 
-        manifest.forEach(src => {
-            promises.push(new Promise((resolve, reject) => {
-                let image = new Image()
-                image.onload = resolve
-                image.src = src
-            }))
-        })
+//         manifest.forEach(src => {
+//             promises.push(new Promise((resolve, reject) => {
+//                 let image = new Image()
+//                 image.onload = resolve
+//                 image.src = src
+//             }))
+//         })
 
-        return Promise.all(promises)
-    }
+//         return Promise.all(promises)
+//     }
 
-    init () {
-        let timeline = new TimelineLite({paused: true})
+//     init () {
+//         let timeline = new TimelineLite({paused: true})
 
-        timeline.add(this.loader.complete().play())
-        timeline.add([this.leftPanel.enter(), this.rightPanel.enter().play()], '+=0', 'normal', 0.2)
-        timeline.play()
-    }
+//         timeline.add(this.loader.complete().play())
+//         timeline.add([this.leftPanel.enter(), this.rightPanel.enter().play()], '+=0', 'normal', 0.2)
+//         timeline.play()
+//     }
 
-}
+// }
 
-window.onload = function () {
-    new App()
+// window.onload = function () {
+//     new App()
 
-    FastClick.attach(document.body)
-}
+//     FastClick.attach(document.body)
+// }
