@@ -5,10 +5,7 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin')
 
 module.exports = {
     entry: {
-        app: [
-            'webpack-hot-middleware/client?reload=true',
-            './src/app'
-        ]
+        app: './src/app'
     },
     module: {
         loaders: [
@@ -48,7 +45,6 @@ module.exports = {
     plugins: [
         new ExtractTextPlugin('[name].bundle.css'),
         new webpack.optimize.OccurenceOrderPlugin(),
-        new webpack.HotModuleReplacementPlugin(),
         new webpack.NoErrorsPlugin(),
         new webpack.ProvidePlugin({
             'fetch': 'imports?this=>global!exports?global.fetch!whatwg-fetch'

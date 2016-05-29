@@ -24,9 +24,9 @@ if (app.get('env') === 'development') {
         stats: { colors: true }
     }));
     app.use(require('webpack-hot-middleware')(compiler));
-
-    app.locals.pretty = true;
 }
+
+app.locals.pretty = true;
 
 var defaults = require('./src/data/default');
 var locales = {};
