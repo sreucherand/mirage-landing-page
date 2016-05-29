@@ -18,6 +18,8 @@ export default class Placeholder extends Component {
 
         on(this.video, 'play', this.handlePlay.bind(this))
         on(this.video, 'pause', this.handlePause.bind(this))
+
+        this.draw()
     }
 
     handlePlay () {
