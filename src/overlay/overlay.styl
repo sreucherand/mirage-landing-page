@@ -1,0 +1,105 @@
+@import '../utils/colors.styl'
+@import '../utils/media-queries.styl'
+@import '../utils/timing-functions.styl'
+
+.component-overlay {
+    background-color: $black
+    display: none
+    height: 100%
+    left: 0
+    position: fixed
+    top: 0
+    transition: width 1.4s $ease-out-quint
+    width: 50%
+    z-index: 10
+    
+    +over($mq.md) {
+        display: block
+    }
+    
+    &--playing {
+        width: 100%
+    }
+
+    .overlay__inner {
+        height: 100%
+        overflow: hidden
+        position: relative
+        width: 100%
+    }
+    
+    .overlay__placeholder,
+    .overlay__teaser {
+        left: 0
+        position: absolute
+        top: 0
+        transition: opacity 1s $ease-out-quint
+    }
+    .overlay__teaser {
+        opacity: 0
+    }
+    &--playing .overlay__placeholder {
+        opacity: 0
+        pointer-events: none
+    }
+    &--playing .overlay__teaser {
+        opacity: 1
+    }
+
+    .overlay__controls {
+        bottom: 0
+        cursor: pointer
+        height: 11.2rem
+        margin: auto
+        position: absolute
+        right: -2.7rem
+        top: 0
+        width: 14rem
+        z-index: 10
+            
+        svg {
+            fill: $brown
+            font-family: 'Maison Neue'
+            font-size: 24px
+            font-weight: 700
+            text-transform: uppercase
+            user-select: none
+            
+            line,
+            circle {
+                fill: none
+                stroke: $brown
+                stroke-width: 4
+                transition: all 500ms $ease-out-quart
+            }
+            .shape__line {
+                stroke-dasharray: 186px 186px
+                stroke-dashoffset: 0
+            }
+            .shape__close,
+            .shape__play {
+                transition: opacity 500ms $ease-out-expo
+            }
+            .shape__close {
+                opacity: 0
+            }
+        }
+        
+        &:hover {
+            svg circle {
+                r: 75px
+            }
+            svg line {
+                stroke-dashoffset: -70px
+            }
+        }
+    }
+    &--playing .overlay__controls svg {
+        .shape__play {
+            opacity: 0
+        }
+        .shape__close {
+            opacity: 1
+        }
+    }
+}

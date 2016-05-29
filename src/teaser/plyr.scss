@@ -1,0 +1,29 @@
+$plyr-color-main: #ac823d;
+
+$plyr-control-spacing: 20px;
+
+$plyr-range-track-height: 4px;
+$plyr-range-thumb-height: 16px;
+$plyr-range-thumb-width: 16px;
+
+@import "~plyr/src/scss/plyr.scss";
+
+.plyr {
+    font-family: 'Maison Neue Mono';
+    height: 100%;
+    max-width: none;
+
+    audio,
+    video {
+        height: 100%;
+        width: 100%;
+    }
+}
+
+.plyr__video-wrapper {
+    height: 100%;
+}
+
+.plyr__controls button {
+    padding: ($plyr-control-spacing * .5);
+}

@@ -1,4 +1,3 @@
 .DS_Store
-*.map
-node_modules
-
+node_modules/
+static/media/

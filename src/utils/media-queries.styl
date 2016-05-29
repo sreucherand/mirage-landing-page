@@ -1,0 +1,23 @@
+$mq = {
+    xs: 0em,
+    sm: 45em,
+    md: 64em
+}
+
+below(width) {
+    @media all and (max-width: width) {
+        {block}
+    }
+}
+
+between(wMin, wMax) {
+    @media all and (min-width: wMin) and (max-width: wMax) {
+        {block}
+    }
+}
+
+over(width) {
+    @media all and (min-width: width) {
+        {block}
+    }
+}

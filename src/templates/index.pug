@@ -1,0 +1,175 @@
+doctype html
+html
+    head
+        meta(charset='utf-8')
+        title= meta.title
+
+        meta(name='description' content=meta.description)
+        meta(name='keywords' content=meta.keywords.join(', '))
+        meta(name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no')
+
+        meta(property='og:type' content='website')
+        meta(property='og:site_name' content=meta.social.facebook.title)
+        meta(property='og:url' content='http://thinkmirage.io/')
+        meta(property='og:title' content=meta.social.facebook.title)
+        meta(property='og:image' content=meta.social.image)
+        meta(property='og:image:type' content='image/jpeg')
+        meta(property='og:description' content=meta.description)
+        
+        meta(name='twitter:card' content='summary_large_image')
+        meta(name='twitter:site' content=meta.social.twitter.account)
+        meta(name='twitter:creator' content=meta.social.twitter.account.slice(0))
+        meta(name='twitter:title' content=meta.social.twitter.title)
+        meta(name='twitter:description' content=meta.description)
+        meta(name='twitter:image' content=meta.social.image)
+
+        link(rel='stylesheet' href='/static/app.bundle.css')
+
+    body
+        .intro.grid
+            .intro__section--1.grid__row
+                .grid__row__column.grid__row__column--xs-3
+                    .intro__logo
+                        h1 Mirage
+                        a(href='/')
+                            svg(viewBox='0 0 512 64.6')
+                                path(d='M113.1,39.7V1.1h7.2v38.6H113.1z M175.2,39.7V1.1h27.3c7.8,0,14.1,2.4,18.1,6.3c3.1,3.1,4.9,7.5,4.9,12.5v0.2c0,10.5-7.3,16.7-17.2,18.5c0,0-4.1,1-9.5,1H175.2z M182.4,33.5h19.5c9.5,0,16.3-4.9,16.3-13.1v-0.2c0-7.8-6-12.5-16.2-12.5h-19.6V33.5z M276,39.4l14-31.1l13.8,31.1h7.5L293.4,1h-6.7l-17.9,38.4H276z M209.9,52.2l9.1,12.4h8.8l-9.1-12.4H209.9z M388.7,39.7h26.2v-6h-26.2V39.7z M365.3,39.7c-0.5-2.2-0.7-4.4-0.7-6.8v-0.2c0-14.2,10.1-26,24.1-26c9,0,14.4,3,19.3,7.3l4.6-5.4C406.3,3.1,399.7,0,389,0c-19.1,0-31.8,15.4-31.8,32.8V33c0,2.3,0.2,4.5,0.6,6.6H365.3z M493.8,39.7v-6.1h-20.5V7.6H512V1.1h-45.9v38.6H493.8z M50.2,1L29.1,24.7L8,1H0l26.1,30.5h6.1l17.9-19.6v27.5h6.9V1H50.2z')
+
+                .grid__row__column.grid__row__column--xs-3
+                    .intro__social
+                        div= social
+                        div
+                            a.intro__social__link(href='https://twitter.com/thinkmirage/' target='_blank')
+                                span Twitter
+                            |  — 
+                            a.intro__social__link(href='https://www.facebook.com/thinkmirage/' target='_blank')
+                                span Facebook
+
+            .intro__section--2.grid__row
+                .grid__row__column.grid__row__column--xs-6.grid__row__column--xs-middle.grid__row__column--sm-4.grid__row__column--sm-offset-1
+                    h2= headline
+
+            .intro__section--3.grid__row
+                .grid__row__column.grid__row__column--xs-3.grid__row__column--xs-offset-3
+                    .intro__status !{nl2br(status)}
+
+            .intro__overlay
+                if !phone
+                    .component-overlay(data-component='overlay')
+                        .overlay__inner
+                            .overlay__teaser.plyr
+                                video
+                                    source(src='/static/media/overlay-teaser.webm' type='video/webm')
+                                    source(src='/static/media/overlay-teaser.mp4' type='video/mp4')
+                                    track(kind='captions' label='English' src='/static/media/subtitles-en.vtt' srclang='en' default)
+
+                            .overlay__placeholder
+                                canvas
+                                video(muted='true' autoplay='true' loop='true')
+                                    source(src='/static/media/overlay-placeholder.webm' type='video/webm')
+                                    source(src='/static/media/overlay-placeholder.mp4' type='video/mp4')
+
+                        .overlay__controls
+                            .controls__shape
+                                svg(viewBox='0 0 334 268')
+                                    line.shape__line(x1='116' y1='134' x2='292' y2='134')
+                                    circle.shape__circle(cx='77' cy='134' r='68')
+                                    polygon.shape__play(points='92,133.5 69,147 69,120')
+                                    text(transform='matrix(0 -1 1 0 334 134)' text-anchor='middle' textLength=trailer.title.length * 15)= trailer.title
+                                    g.shape__close
+                                        line(x1='67' y1='123' x2='87' y2='143')
+                                        line(x1='87' y1='123' x2='67' y2='143')
+
+        .grid
+            .section
+                .section__trailer
+                    .grid__row
+                        .grid__row__column.grid__row__column--xs-6
+                            a(href=trailer.url target='_blank')
+                                svg(viewBox='0 0 140 140')
+                                    circle(cx='70' cy='70' r='68')
+                                    polygon(points='85,69.5 62,83 62,56')
+                                | #{trailer.title}
+
+                .grid__row
+                    .grid__row__column
+                        h2= credits.title
+
+                .grid__row
+                    - var sum = 0
+                    each section in credits.content   
+                        .grid__row__column(class='grid__row__column--xs-' + section.content.length * 3 + ' grid__row__column--sm-' + section.content.length * 2 + ' grid__row__column--sm-offset-' + (1 - (sum % 2)))
+                            h3 !{nl2br(section.title)}
+                            h4= section.origin
+
+                            .grid__row
+                                each column in section.content
+                                    .grid__row__column(class='grid__row__column--xs-' + 6 / section.content.length)
+                                        .section__column
+                                            each category in column
+                                                .section__list.section__list--title
+                                                    ul
+                                                        each line in category.title
+                                                            li= line
+
+                                                .section__list.section__list--content
+                                                    ul
+                                                        each line in category.content
+                                                            li
+                                                                if line.title && line.url
+                                                                    a(href=line.url target='_blank')= line.title
+                                                                else
+                                                                    | #{line}
+                        - sum += section.content.length
+
+            .section
+                .grid__row
+                    .grid__row__column
+                        h2= partners.title
+
+                .grid__row
+                    .grid__row__column.grid__row__column--xs-3.grid__row__column--sm-2.grid__row__column--sm-offset-1
+                        .section__column
+                            each category in partners.content[0]
+                                .section__list.section__list--title
+                                    ul
+                                        each line in category.title
+                                            li
+                                                a(href=line.url target='_blank')= line.title
+
+                                .section__list.section__list--content
+                                    if category.content
+                                        ul
+                                            each line in category.content
+                                                li= line
+
+                    .section__column.section__column--distribute.grid__row__column.grid__row__column--xs-2.grid__row__column--sm-2
+                        each asset in partners.content[1]
+                            a(href=asset.url target='_blank')
+                                img(src=asset.src)
+
+            .section
+                .grid__row
+                    .grid__row__column
+                        h2= acknowledgments.title
+
+                .grid__row
+                    .grid__row__column.grid__row__column--xs-6.grid__row__column--sm-4.grid__row__column--sm-offset-1
+                        .section__paragraph
+                            p= acknowledgments.content[0].join(' • ')
+
+                    .grid__row__column.grid__row__column--xs-4.grid__row__column--xs-offset-1.grid__row__column--sm-2.grid__row__column--sm-offset-2
+                        .section__footer
+                            each asset in acknowledgments.content[1]
+                                a(href=asset.url target='_blank')
+                                    img(src=asset.src)
+
+    script(src='/static/app.bundle.js')
+    
+    script.
+        (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+        function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+        e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+        e.src='//www.google-analytics.com/analytics.js';
+        r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+        //ga('create','UA-37300118-2');ga('send','pageview');

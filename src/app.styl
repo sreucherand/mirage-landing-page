@@ -1,0 +1,62 @@
+@import './utils/colors.styl'
+@import './utils/media-queries.styl'
+@import './utils/fluid-typography.styl'
+
+@font-face {
+    font-family: 'Maison Neue Mono'
+    src: url('./fonts/maison-neue-mono/maison-neue-mono.eot?#iefix') format('embedded-opentype'),
+         url('./fonts/maison-neue-mono/maison-neue-mono.woff') format('woff'),
+         url('./fonts/maison-neue-mono/maison-neue-mono.ttf') format('truetype')
+    font-style: normal
+    font-weight: normal
+}
+
+@font-face {
+  font-family: 'Maison Neue';
+  src: url('./fonts/maison-neue/maison-neue-bold.eot?#iefix') format('embedded-opentype'),
+       url('./fonts/maison-neue/maison-neue-bold.woff') format('woff'),
+       url('./fonts/maison-neue/maison-neue-bold.ttf') format('truetype');
+  font-style: normal;
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: 'Maison Neue';
+  src: url('./fonts/maison-neue/maison-neue-bold-italic.eot?#iefix') format('embedded-opentype'),
+       url('./fonts/maison-neue/maison-neue-bold-italic.woff') format('woff'),
+       url('./fonts/maison-neue/maison-neue-bold-italic.ttf') format('truetype');
+  font-style: italic;
+  font-weight: 700;
+}
+
+html,
+body {
+    font-family: 'Maison Neue Mono'
+    font-size: 10px
+    height: 100%
+    
+    fluid(320, 1280, 10, 12)
+    
+    +over(1280px) {
+        font-size: 12px
+    }
+    
+    -webkit-font-smoothing: antialiased
+}
+body {
+    +over($mq.md) {
+        padding-left: 50%
+    }
+}
+
+*::selection {
+  background-color: $brown
+  color: $white
+} 
+
+h1,
+h2,
+h3,
+h4 {
+    font-family: 'Maison Neue'
+}

@@ -1,0 +1,75 @@
+@import '../utils/colors.styl'
+@import '../utils/timing-functions.styl'
+
+.intro {
+    box-sizing: border-box
+    display: flex
+    flex-direction: column
+    min-height: 100%
+    margin-bottom: 4.2rem
+    padding-bottom: 4.2rem
+    padding-top: 4.2rem
+}
+.intro__section--1 {
+    .intro__logo {
+        h1 {
+            display: none
+        }
+        
+        svg {
+            max-width: 10rem
+        }
+    }
+    .intro__social {
+        line-height: 1.75em
+        
+        .intro__social__link {
+            color: inherit
+            font-family: 'Maison Neue'
+            font-weight: 700
+            text-decoration: none
+            
+            span {
+                color: inherit
+                clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%)
+                transition: all 1s $ease-out-quart
+            }
+            
+            &:hover span {
+                color: $brown
+                clip-path: polygon(0 0, 100% 0, 100% 50%, 0 50%)
+                transition: all 500ms $ease-out-quart
+            }
+        }
+    }
+}
+.intro__section--2 {
+    flex: 1
+    height: 100%
+    
+    h2 {
+        font-size: 2.8rem
+        line-height: 1.3em
+        margin-bottom: 4.2rem
+        margin-top: 4.2rem
+    }
+}
+.intro__section--3 {
+    .intro__status {
+        color: $light-grey
+        line-height: 1.75em
+        position: relative
+        white-space: nowrap
+        
+        &:before {
+            background-color: $light-grey
+            content: ''
+            height: 2px
+            margin-right: 2.5rem
+            position: absolute
+            right: 100%
+            top: 0.7em
+            width: 6.5rem
+        }
+    }
+}

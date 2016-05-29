@@ -1,0 +1,15 @@
+@import './media-queries.styl'
+
+fluid(sMin, sMax, fMin, fMax) {
+    sAspect = (sMax - sMin) / sMin
+    fAspect = (fMax - fMin) / fMin
+    
+    aspect = fAspect / sAspect
+    
+    min = unit(fMin, 'px')
+    max = ((fMin / sMin) * 100)vw
+    
+    +between(unit(sMin, 'px'), unit(sMax, 'px')) {
+        font-size: 'calc(%s + ((%s - %s) * %s ))' % (min max min aspect)
+    }
+}
