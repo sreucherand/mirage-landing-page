@@ -19,15 +19,15 @@ module.exports = {
             },
             {
                 test: /\.css$/,
-                loader: ExtractTextPlugin('style', '!css!postcss')
+                loader: ExtractTextPlugin.extract('style', '!css!postcss')
             },
             {
                 test: /\.styl$/,
-                loader: ExtractTextPlugin('style', '!css!postcss!stylus')
+                loader: ExtractTextPlugin.extract('style', '!css!postcss!stylus')
             },
             {
                 test: /\.scss$/,
-                loader: ExtractTextPlugin('style', '!css!postcss!sass')
+                loader: ExtractTextPlugin.extract('style', '!css!postcss!sass')
             },
             {
                 test: /\.(eot|svg|ttf|woff)$/,
@@ -46,6 +46,7 @@ module.exports = {
         require('autoprefixer')()
     ],
     plugins: [
+        new ExtractTextPlugin('[name].bundle.css'),
         new webpack.optimize.OccurenceOrderPlugin(),
         new webpack.HotModuleReplacementPlugin(),
         new webpack.NoErrorsPlugin(),
