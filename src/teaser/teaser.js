@@ -11,8 +11,8 @@ export default class Teaser extends Component {
         super(element)
 
         this.player = plyr.setup(this.element, { controls: ['play', 'progress', 'mute', 'captions', 'fullscreen'] })[0]
-
-        on(this.player.media, 'ended', this.handleStop.bind(this))
+        
+        on(this.player.getMedia(), 'ended', this.handleStop.bind(this))
 
         fetch('https://cdn.plyr.io/1.6.11/plyr.svg')
             .then(response => response.text())
